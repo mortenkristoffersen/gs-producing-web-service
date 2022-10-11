@@ -6,8 +6,14 @@
 </head>
 <body>
 <tbody>
-<p> <a href="/country"> here is a country</a></p>
-<p> <a href="/countries"> here is a list of countries</a></p>
+
+<div th:each="country: ${countries}">
+    <p th:text="${country.name}" />
+    <p th:text="${country.population}" />
+    <p th:text="${country.capital}" />
+    <p th:text="${country.currency}" />
+    <p>---</p>
+</div>
 
 </tbody>
 </body>
