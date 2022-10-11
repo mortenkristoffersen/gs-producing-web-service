@@ -1,7 +1,9 @@
 package com.example.producingwebservice;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.spring.guides.gs_producing_web_service.Country;
@@ -43,5 +45,9 @@ public class CountryRepository {
 	public Country findCountry(String name) {
 		Assert.notNull(name, "The country's name must not be null");
 		return countries.get(name);
+	}
+
+	public List<Country> countries() {
+		return new ArrayList(countries.values());
 	}
 }
